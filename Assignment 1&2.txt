@@ -1,0 +1,425 @@
+Assignment 1
+//---------------------------------------------------------------------------
+//Programmer:          Amber
+//Date:                23 July 2017
+//Reference:           Assignment 1, Exercise 1
+//Description:         This program includes 3 exercises, one is printing a 
+//                     box, an oval, an arrow and a diamonds, others are 
+//                     about conversion
+//Guarantee:           Program works to full specifications
+#include<iostream>
+#include<conio>
+#pragma hdrstop
+using namespace std;
+
+#include <tchar.h>
+//---------------------------------------------------------------------------
+
+#pragma argsused
+int _tmain(int argc, _TCHAR* argv[])
+{
+	cout << endl << endl <<endl << endl << endl << endl << endl << endl
+             << " *********       ***        *         *" << endl
+	     << " *       *     *     *     ***       * *" << endl
+	     << " *       *    *       *   *****     *   *" << endl
+	     << " *       *    *       *     *      *     *" << endl
+	     << " *       *    *       *     *     *       *" << endl
+	     << " *       *    *       *     *      *     *" << endl
+	     << " *       *    *       *     *       *   *" << endl
+     	     << " *       *     *     *      *        * *" << endl
+	     << " *********       ***        *         *" << endl;
+
+	getch();
+	return 0;
+}
+//---------------------------------------------------------------------------
+
+//###########################################################################
+
+//---------------------------------------------------------------------------
+#include<iostream>
+#include<conio>
+#pragma hdrstop
+using namespace std;
+#include <tchar.h>
+//---------------------------------------------------------------------------
+
+#pragma argsused
+int _tmain(int argc, _TCHAR* argv[])
+{
+	float pounds;
+	float kilograms;
+
+	cout << "Enter a weight in pounds: ";
+	cin >> pounds;
+
+	kilograms = pounds * 0.4545;
+
+	cout << endl << "The weight of " << pounds << " pounds is equal to "
+             << kilograms << " kilograms.";
+
+	getch();
+	return 0;
+}
+//---------------------------------------------------------------------------
+
+//###########################################################################
+
+//---------------------------------------------------------------------------
+#include<iostream>
+#include<conio>
+#pragma hdrstop
+using namespace std;
+#include <tchar.h>
+//-------------------------------------------------------------------------
+
+#pragma argsused
+int _tmain(int argc, _TCHAR* argv[])
+{
+	float fahrenheit;
+	float celsius;
+
+	cout << "Enter a temperature in degrees Fahrenheit : ";
+	cin >> fahrenheit;
+
+	celsius = ( fahrenheit + 40 ) * 5 / 9 - 40;
+
+
+	cout << endl << "Temperature Conversion Table" << endl
+	     << "Fahrenheit   |   Celsius" << endl
+	     << "-------------|------------" << endl
+             << fahrenheit << "           |         " << celsius << endl;
+
+	getch();
+	return 0;
+}
+//---------------------------------------------------------------------------
+
+//###########################################################################
+
+//---------------------------------------------------------------------------
+Assignment 2
+
+
+//--------------------------------------------------------------------------
+//Programmer:           Amber
+//Date:                 31 July 2017
+//Folder:               H:\C++ File
+//Reference:            Assignment 2 exercise 4
+//Description:          This program reads a single four digit integer in
+//                      main() and uses while loop to force correct data 
+//                      input
+//Guarantee:            Program works to full specifications
+
+#include <iostream>
+#include<conio>
+#pragma hdrstop
+using namespace std;
+
+#include <tchar.h>
+
+//---------------------------------------------------------------------------
+
+#pragma argsused
+int _tmain(int argc, _TCHAR* argv[])
+{
+	int fourDigitInteger;
+
+	cout << " Enter 4 digit integer : ";
+	cin >> fourDigitInteger;
+
+	while ( fourDigitInteger < 1000 || fourDigitInteger> 9999 )
+	{
+		cout << " Must be FOUR DIGIT INTEGER!" << endl
+			  << " Input the right number : ";
+		cin >> fourDigitInteger;
+	}
+
+		cout << fourDigitInteger % 10 << endl
+			  << fourDigitInteger / 10 % 10 << endl
+			  << fourDigitInteger / 100 % 10 << endl
+			  << fourDigitInteger / 1000 % 10 << endl;
+
+	getch();
+	return 0;
+}
+//-----------------------------------------------------------------------------
+
+//#############################################################################
+
+//-----------------------------------------------------------------------------
+//Programmer:           Amber
+//Date:                 31 July 2017
+//Folder:               H:\C++ File
+//Reference:            Assignment 2 exercise 5
+//Description:          This program prints a table listing the ASCII characters
+//                      and character codes for A...Z, a...z, 0...9 and #,%, +,
+//                      and ' '.
+//
+//Guarantee:            Program works to full specifications
+
+#include <iostream>
+#include<conio>
+#pragma hdrstop
+using namespace std;
+
+#include <tchar.h>
+
+//-------------------------------------------------------------------------------
+
+#pragma argsused
+int _tmain(int argc, _TCHAR* argv[])
+{
+	char character ;
+	for ( int i = 0; i < 26; i++ )
+	{
+		character = 'A' + i;
+		cout << static_cast < int > ( character ) << character << endl;
+	}
+	getch();
+	clrscr();
+
+	for ( int i = 0; i < 26; i++ )
+	{
+		character = 'a' + i;
+		cout << static_cast < int > ( character ) << character << endl;
+	}
+	getch();
+	clrscr();
+
+	for ( int i = 0; i < 10; i++ )
+	{
+		character = '0' + i;
+		cout << static_cast < int > ( character ) << character << endl;
+	}
+	getch();
+	clrscr();
+
+	character = '#';
+	cout << static_cast < int > ( character ) << character << endl;
+	character = '%';
+	cout << static_cast < int > ( character ) << character << endl;
+	character = '+';
+	cout << static_cast < int > ( character ) << character << endl;
+	character = ' ';
+	cout << static_cast < int > ( character ) << character << endl;
+	getch();
+	return 0;
+}
+//--------------------------------------------------------------------------------
+
+//################################################################################
+
+//--------------------------------------------------------------------------------
+//Programmer:           Amber
+//Date:                 31 July 2017
+//Folder:               H:\C++ File
+//Reference:            Assignment 2 exercise 6
+//Description:          This program passes the mark to a function and followed 
+//                      by the grade
+//                  
+//
+//Guarantee:            Program works to full specifications
+
+#include <iostream>
+#include<conio>
+#pragma hdrstop
+using namespace std;
+
+#include <tchar.h>
+
+void printMark ( int );
+//---------------------------------------------------------------------------------
+
+#pragma argsused
+int _tmain(int argc, _TCHAR* argv[])
+{
+	int mark;
+
+   cout << "Enter the mark: ";
+   cin >> mark;
+
+   printMark( mark );
+   getch();
+   clrscr();
+   return 0;
+}
+//---------------------------------------------------------------------------------
+//void printMark( int mark )
+//Purpose:         Pass the mark to a function
+//Inputs:          int printMark- integer and grade chosen by user
+//Output:          NULL
+//---------------------------------------------------------------------------------
+void printMark( int mark )
+{
+	cout << "Your mark is: " << mark << " and your grade is:";
+   if ( mark >= 80)
+      cout << " A pass";
+   else
+      if ( mark >= 65 )
+			cout << " B pass";
+      else
+			if ( mark >= 50 )
+            cout << " C pass";
+			else
+				if ( mark >= 40 )
+					cout << " D fail";
+				else
+					cout << " E fail";
+}
+//--------------------------------------------------------------------------------
+
+
+//################################################################################
+
+//--------------------------------------------------------------------------------
+//Programmer:           Yuting.Li ID 2173833
+//Date:                 31 July 2017
+//Folder:               H:\C++ File
+//Reference:            Assignment 2 exercise 7
+//Description:          This program reads a persons name and prints the 
+//                      name vertically one character per line
+//                  
+//
+//Guarantee:            Program works to full specifications
+
+#include <iostream>
+#include <conio>
+#pragma hdrstop
+using namespace std;
+
+void printmyNames( char[] );
+//---------------------------------------------------------------------
+#pragma argsused
+
+int main()
+{
+	char names [ 68 ];
+	cout << "Enter your names: ";
+	cin.get ( names,68 );
+
+	printmyNames ( names );
+
+	getch();
+	clrscr();
+	return 0;
+}
+//---------------------------------------------------------------------------
+//void printmyNames( char myNames[] )
+//Purpose:      print Name Vertically
+//Inputs:       char name[]
+//Output:       NULL
+//---------------------------------------------------------------------------
+void printmyNames( char myNames[] )
+{
+	int i = 0;
+
+	while ( myNames [ i ] != '\0' )
+	{
+		cout << " \t\t\t\t\t" << myNames[ i ] << endl;
+		i++;
+	}
+}
+//----------------------------------------------------------------------------
+
+//############################################################################
+
+//----------------------------------------------------------------------------
+Pseudocode:
+
+Exercise 4.
+
+Declare fourDightInteger as int
+
+print out "Enter 4 digit integer" 
+input Four Digit Integer.
+
+While fourDightInteger  is smaller than 10000 or greater than 9999, 
+print 
+        "Must be FOUR DIGIT INTEGER!"
+	"Input the right number" 
+input fourDigitInteger again
+Endwhile
+
+print out "four 4 digit integer is:"
+print : fourDigitInteger % 10
+        fourDigitInteger / 10 % 10
+    	fourDigitInteger / 100 % 10
+    	fourDigitInteger / 1000 % 10
+
+Exercise 5.
+
+ininitialize char character
+
+Loop 26 times
+increment character counter
+set character to 'A' + i
+print out static_cast < int > ( character ) and character 
+End loop
+
+Loop 26 times
+increment character counter
+set character 'a' + i
+print out static_cast < int > ( character ) and character 
+End loop
+
+Loop 10 times
+increment character counter
+set character '0' + i
+print out static_cast < int > ( character ) and character 
+End loop
+
+set character '#'
+print out static_cast < int > ( character ) and character 
+
+set character '%'
+print out static_cast < int > ( character ) and character 
+
+set character '+'
+print out static_cast < int > ( character ) and character 
+
+set character ' '
+print out static_cast < int > ( character ) and character 
+
+Exercise 6.
+
+ininitialize mark
+print "Enter the mark: "
+input mark
+
+Function printMark
+print out "Your mark is: " 
+input mark
+print out " and your grade is:"
+Ifmark>=80
+  print "A pass"
+Else
+  Ifmark >=65
+     print" B pass"
+  Else 
+     Ifmark>=50
+        print "C pass"
+     Else 
+        Ifmark>=40
+           print "D fail"
+        Else 
+           print "E fail"
+        
+Exercise 7
+
+ininitialize char[68] names
+
+print out "Enter your names :"
+input char [68] names
+
+cleanscreen()
+
+Function printNameVertically( names )
+
+ininitialize i to 0;
+while name[i] != null
+print out name[ i ]
+increment i
+Endwhile
+IT5185_2017_Assignment_2_ YutingLi.txt
+Displaying IT5185_2017_Assignment_2_ YutingLi.txt.
